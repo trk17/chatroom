@@ -1,0 +1,31 @@
+Author: Thomas Kiernan
+Date: September 27, 2016
+
+This is an implementation of a chatroom. Server.c acts as the backend of the
+chatroom and handles users entering and leaving the chatroom. Client.c is run
+by the users to enter the chatroom. The chatroom uses a standard UDP connection.
+
+To compile the programs simple run 'make'
+
+Command Line Arguments:
+./server {Port Number}
+
+./client {Username} {Server IP Address} {Port Number}
+
+Once programs are running the following are special commands:
+
+/ping -   Pings the server and responds if the server is Running
+
+/join -   Joins the chatroom. Without joining messages will not be sent to
+          members of the room and the user will not receive messages.
+
+/leave -  Leaves the chatroom. Messages will no longer be broadcasted and
+          user will no longer receive messages
+
+/who -    Will print all current usernames in the chatroom
+
+If the messages is not one of these commands and the user is in the chatroom,
+then the message will be broadcasted to all members of the chatroom.
+
+NOTES:
+  - Two users with same username cannot join the chatroom at the same time
